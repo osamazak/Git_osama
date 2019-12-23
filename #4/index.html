@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue JS</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div id="app" class="container text-center mt-5">
+        <h1 class="alert alert-primary"> Events </h1>
+        <h1> {{total}} </h1>
+        <a @click.once="click" class="btn btn-info">Add </a>
+        <a @click="click2" class="btn btn-danger">subtract </a>
+        <hr>
+        <form action="index.php">
+            <input type="text" class="form-control " style="display: inline-block; width: 350px;">
+            <input type="submit" class="btn btn-primary" value="Submit" @click.submit.prevent.alt="any">
+        </form>
+
+    </div>
+
+
+
+
+    <!-- development version, includes helpful console warnings -->
+    <script src="../js/jquery-3.2.1.slim.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/vue.js"></script>
+    <script>
+        new Vue({
+           el: '#app',
+           data:{
+               total:0
+           },
+            methods:{
+                click: function () {
+                    this.total += 1;
+                },
+                click2: function () {
+                    this.total -= 1;
+                },
+                any:function() {
+                    console.log('Hello Osama');
+                }
+            },
+            computed:{
+
+            },
+            watch:{
+
+            }
+
+        });
+    </script>
+</body>
+</html>

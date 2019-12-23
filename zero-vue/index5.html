@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue JS</title>
+    <link href="../logo.png" rel="icon" type="image/png">
+    <link href="../css/bulma.css" rel="stylesheet" type="text/css">
+    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../css/main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div id="app" class="container mt-5 text-center five">
+        <button :class="{selected : isSelected }" @click="isSelected = !isSelected">First Method</button>
+        <button @click="toggle">Second Method</button>
+        <button @click="toggleAdv($event, 'selected')">Three Method</button>
+    </div>
+    <!-- development version, includes helpful console warnings -->
+    <script src="../js/jquery-3.2.1.slim.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/vue.js"></script>
+    <script>
+
+
+
+        var app = new Vue({
+           el:'#app',
+           data:{
+                isSelected: false
+           },
+            methods:{
+                toggle: function (event) {
+                    event.target.classList.toggle('selected')
+                },
+                toggleAdv: function (event,theClass) {
+                    event.target.classList.toggle(theClass)
+                }
+            },
+            created(){
+
+            }
+
+        });
+    </script>
+
+</body>
+</html>

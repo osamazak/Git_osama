@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue JS</title>
+    <link href="../logo.png" rel="icon" type="image/png">
+    <link href="../css/bulma.css" rel="stylesheet" type="text/css">
+    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../css/main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div id="app" class="container mt-5 text-center">
+        <img v-if="selected" :src="selected" alt="any">
+    </div>
+    <!-- development version, includes helpful console warnings -->
+    <script src="../js/jquery-3.2.1.slim.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/vue.js"></script>
+    <script>
+
+        var photos = [
+          "http://placehold.it/400/00d1b2/FFF",
+          "http://placehold.it/400/f14668/FFF",
+          "http://placehold.it/400/007bff/FFF",
+          "http://placehold.it/400/ffc107/FFF",
+          "http://placehold.it/400/ffcc07/FFF",
+        ];
+
+        var app = new Vue({
+           el:'#app',
+           data:{
+               photos:photos,
+               selected: 1,
+           },
+            methods:{
+                randomPhoto(imgs){
+                    return imgs[Math.floor( Math.random() * photos.length)];
+                }
+            },
+            created(){
+               this.selected = this.randomPhoto(this.photos)
+            }
+
+        });
+    </script>
+
+</body>
+</html>

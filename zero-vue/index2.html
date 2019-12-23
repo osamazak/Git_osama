@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue JS</title>
+    <link href="../logo.png" rel="icon" type="image/png">
+    <link href="../css/bulma.css" rel="stylesheet" type="text/css">
+    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../css/main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div id="app" class="container mt-5">
+        <ul class="tabs-choose">
+            <li @click="activeTab = '1' " :class="[activeTab === '1' ? 'active' : '' ] " class="bg-successindex2.html" >Tab One</li>
+            <li @click="activeTab = '2' " :class="[activeTab === '2' ? 'active' : '' ] ">Tab Two</li>
+            <li @click="activeTab = '3' " :class="[activeTab === '3' ? 'active' : '' ] ">Tab Three</li>
+            <li @click="activeTab = '4' " :class="[activeTab === '4' ? 'active' : '' ] ">Tab Four</li>
+        </ul>
+        <div class="tabs-content message is-primary">
+            <div class="content-one message-body" v-show="activeTab === '1'">Content One</div>
+            <div class="content-two message-body" v-show="activeTab === '2'">Content Two</div>
+            <div class="content-three message-body" v-show="activeTab === '3'">Content Three</div>
+            <div class="content-four message-body" v-show="activeTab === '4'">Content Four</div>
+        </div>
+    </div>
+    <!-- development version, includes helpful console warnings -->
+    <script src="../js/jquery-3.2.1.slim.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/vue.js"></script>
+    <script>
+
+
+
+        var app = new Vue({
+           el:'#app',
+           data:{
+                activeTab: '1'
+           },
+            methods:{
+
+            }
+        });
+    </script>
+
+</body>
+</html>

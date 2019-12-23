@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue JS</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div id="app" class="container text-center mt-5">
+        <h2 :class="{'alert alert-success' : isActive,'col-md-6':isMin}">Speed of Light </h2>
+    </div>
+
+
+
+
+    <!-- development version, includes helpful console warnings -->
+    <script src="../js/jquery-3.2.1.slim.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/vue.js"></script>
+    <script>
+        new Vue({
+           el: '#app',
+           data:{
+               className : "alert alert-success",
+               isActive: true,
+               isMin: true
+           },
+            methods:{
+
+            },
+            computed:{
+
+            },
+            watch:{
+
+            }
+
+        });
+    </script>
+</body>
+</html>

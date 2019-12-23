@@ -1,0 +1,122 @@
+body{
+    font-family: 'Open Sans', 'sans-serif';
+    font-size: 18px;
+    box-sizing: border-box;
+}
+.container{
+    margin: 20px auto;
+    width: 1200px;
+
+}
+.container textarea{
+    width: 430px;
+    height: 200px;
+    resize: none;
+    border: 1px solid #BBBBBB;
+}
+.container input{
+    width: 430px;
+    margin:10px 0 ;
+    border: 1px solid #BBBBBB;
+}
+.container .counter{
+    display: block;
+    text-align: right;
+    padding-top:10px;
+}
+.container .counter.zero span {
+    color: red;
+}
+.container .question-box:not(:last-child){
+    border-bottom: 1px solid #eeeeee;
+}
+.container .question-box h3{
+    margin: 0;
+    padding: 15px;
+    background-color: #dfdfdf;
+}
+.container .question-box h3:hover {
+    cursor: pointer;
+}
+.container .question-box .question-reply{
+    background-color: #efefef;
+    padding: 15px;
+    transition-duration: 2s;
+    transition-delay: 4s;
+    transition-timing-function: ease-in-out;
+}
+.container .question-box .question-reply p {
+    margin: 0;
+    transition: 2s all ease-in-out;
+}
+/* for the index 2 */
+
+.tabs-choose li{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #eeeeee;
+    cursor: pointer;
+    opacity: 0.3;
+}
+.tabs-choose li.active{
+    opacity: 1;
+}
+.tabs-content{
+    background-color: #eeeeee;
+    margin: 0 auto;
+    padding: 20px;
+    height: 150px;
+}
+
+/* for the index 3 */
+.the-message{
+    padding: 20px;
+    background-color: #eeeeee;
+    max-width: 400px;
+    margin: 20px auto;
+}
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+}
+/* .fade-leave-active below version 2.1.8 */
+.fade-enter, .fade-leave-to {
+    opacity: 0;
+}
+.bounce-enter-active {
+    animation: bounce-in .5s;
+}
+.bounce-leave-active {
+    animation: bounce-in .5s reverse;
+}
+@keyframes bounce-in {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* for the index 5 */
+.five button{
+    padding: 10px 20px;
+    background-color: #0c5460;
+    color: #FFFFFF;
+    border: 1px solid #0c5460;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.five button:focus{
+    outline: none;
+}
+.five button.selected{
+    background-color: #f14668;
+    border-color: #f14668;
+}
+
+
+
+

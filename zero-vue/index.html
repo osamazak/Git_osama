@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue JS</title>
+    <link href="../logo.png" rel="icon" type="image/png">
+    <link href="../css/bulma.css" rel="stylesheet" type="text/css">
+    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../css/main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div id="app" class="container text-center mt-5">
+        <div class="message is-primary">
+            <h4 class="message-header"> Your Message ( {{ maxLength }} Characters Allower ) </h4>
+            <div class="message-body">
+                <input type="text" v-model="maxLength" placeholder="Type Your Allawed Char" class="form-control">
+                <textarea @input="countChars" v-model="message" :maxlength="maxLength" class="form-control"></textarea>
+                <span class="counter" :class="{ 'zero': reachZero }">
+                    Left | <span> {{remainingChars}} </span>
+                </span>
+            </div>
+        </div>
+
+        <hr>
+        <div class="question-box" v-for="question in questions">
+            <h3 v-text="question.title" @click="question.open = !question.open"></h3>
+            <div class="question-reply" v-show="question.open">
+                <p>{{ question.reply }}</p>
+            </div>
+        </div>
+
+    </div>
+    <!-- development version, includes helpful console warnings -->
+    <script src="../js/jquery-3.2.1.slim.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/vue.js"></script>
+    <script>
+
+        var questions = {
+           "Question One":{
+              'open' : true,
+              'title': "One : what happen Bla Bla Bla Bla Bla ",
+              'reply':"you can sany any thing here"
+          },
+            "Question Two":{
+              'open' : false,
+              'title': "Two : what happen Bla Bla Bla Bla Bla ",
+              'reply':"you can sany any thing here"
+          },
+            "Question Three":{
+              'open' : false,
+              'title': "Three : what happen Bla Bla Bla Bla Bla ",
+              'reply':"you can sany any thing here"
+          },
+            "Question Four":{
+              'open' : false,
+              'title': "Four : what happen Bla Bla Bla Bla Bla ",
+              'reply':"you can sany any thing here"
+          },
+            "Question Five":{
+              'open' : false,
+              'title': "Five : what happen Bla Bla Bla Bla Bla ",
+              'reply':"you can sany any thing here"
+          },
+
+        };
+
+        var app = new Vue({
+           el:'#app',
+           data:{
+                maxLength: null,
+               remainingChars: 10,
+               message: null,
+               reachZero: false,
+               //This is for the question
+               questions:questions
+           },
+            methods:{
+               countChars: function () {
+                   this.remainingChars = this.maxLength - this.message.length;
+                   this.reachZero = this.remainingChars === 0;
+                   console.log(this.reachZero);
+               }
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue JS</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div id="app" class="container text-center mt-5">
+
+
+        <ol class="list-unstyled">
+            <todo-item
+                    v-for="item in groceryList"
+                    v-bind:todo="item"
+                    v-bind:key="item.id"
+                    class="alert alert-info"
+
+            ></todo-item>
+        </ol>
+    </div>
+
+
+
+
+    <!-- development version, includes helpful console warnings -->
+    <script src="../js/jquery-3.2.1.slim.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/vue.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+        new Vue({
+           el: '#app',
+           data:{
+               total:0
+           },
+            methods:{
+                click: function () {
+                    this.total += 1;
+                },
+                click2: function () {
+                    this.total -= 1;
+                },
+                any:function() {
+                    console.log('Hello Osama');
+                }
+            },
+            computed:{
+
+            },
+            watch:{
+
+            }
+
+        });
+    </script>
+</body>
+</html>

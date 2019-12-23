@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue JS</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div id="app" class="container text-center mt-5">
+        <h1>This is Vue</h1>
+        <div class="alert alert-danger">{{ message }}</div>
+        <div :class="className">{{ message }}</div>
+<!--        This the Six-->
+        <input type="text" v-model="message" class="form-control">
+        <ul v-show="show">
+            <li v-for="list in lists" class="alert-info m-2">{{list}}</li>
+        </ul>
+        <!--        button click-->
+        <button @click="enableList" class="btn btn-primary m-2">Sow List</button>
+        <button @click="disableList" class="btn btn-danger m-2">Hide List</button>
+    </div>
+
+
+
+
+    <!-- development version, includes helpful console warnings -->
+    <script src="../js/jquery-3.2.1.slim.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello Vue!',
+                className: "alert alert-primary",
+                show: false,
+                lists: [
+                    "osama",
+                    "Shaher",
+                    "Abaonob",
+                    "Ben"
+                ],
+            },
+            methods : {
+                enableList(){
+                    this.show = true
+                },
+                disableList: function(){
+                    this.show = false
+                }
+            },
+
+        })
+    </script>
+</body>
+</html>
